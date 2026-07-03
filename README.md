@@ -42,7 +42,6 @@ Dikembangkan sebagai tugas *Project Based Learning* (PBL) Program Studi Teknik I
 * **Barang Keluar** — Pencatatan barang keluar dengan pengecekan stok otomatis.
 * **Manajemen Supplier** — Kelola data pemasok barang.
 * **Manajemen Kategori** — Kelola kategori produk elektronik.
-* **Manajemen Pengguna** — Tambah, edit, dan hapus akun pengguna sistem.
 * **Ekspor Laporan** — Unduh data barang dalam format Excel (.xlsx) via PhpSpreadsheet.
 * **Notifikasi Stok Rendah** — *Real-time* alert via Pusher ketika stok di bawah batas minimum.
 
@@ -163,9 +162,8 @@ pro-web/
 | CRUD Barang | ✅ | ❌ (read-only) |
 | Barang Masuk / Keluar | ✅ | ❌ |
 | Supplier & Kategori | ✅ | ❌ |
-| Manajemen Pengguna | ✅ | ❌ |
 | Ekspor Laporan | ✅ | ✅ |
-| Notifikasi Stok Rendah | ✅ | ❌ |
+| Notifikasi Stok Rendah | ✅ | ✅ |
 | Pengaturan Profil | ✅ | ✅ |
 
 ## 📄 License
