@@ -44,12 +44,13 @@ Dikembangkan sebagai tugas *Project Based Learning* (PBL) Program Studi Teknik I
 * **Manajemen Kategori** — Kelola kategori produk elektronik.
 * **Manajemen Pengguna** — Tambah, edit, dan hapus akun pengguna sistem.
 * **Ekspor Laporan** — Unduh data barang dalam format Excel (.xlsx) via PhpSpreadsheet.
-* **Notifikasi Stok Rendah** — *Real-time* alert via Pusher/WebSocket ketika stok di bawah batas minimum.
+* **Notifikasi Stok Rendah** — *Real-time* alert via Pusher ketika stok di bawah batas minimum.
 
 ### Manajer
 * **Dashboard Monitoring** — Ringkasan stok dan statistik persediaan.
 * **Lihat Data Barang** — Akses *read-only* ke daftar barang beserta detail stok.
 * **Ekspor Laporan** — Unduh laporan persediaan dalam format Excel.
+* **Notifikasi Stok Rendah** — *Real-time* alert via Pusher ketika stok di bawah batas minimum.
 
 ### Umum
 * **Autentikasi** — Login, lupa password (OTP via email), dan reset password.
