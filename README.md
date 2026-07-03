@@ -125,10 +125,10 @@ Dikembangkan sebagai tugas *Project Based Learning* (PBL) Program Studi Teknik I
 
 ### Akun Default (Seeder)
 
-| Role | Email | Password |
+| Role | Username | Password |
 |------|-------|----------|
-| Admin Gudang | *(lihat seeder)* | *(lihat seeder)* |
-| Manajer | *(lihat seeder)* | *(lihat seeder)* |
+| Admin Gudang | admin *(default seeder)* | password *(default seeder)* |
+| Manajer | manajer *(default seeder)* | password *(default seeder)* |
 
 > Jalankan `php artisan db:seed` untuk membuat akun default. Periksa file seeder di `database/seeders/` untuk kredensial.
 
