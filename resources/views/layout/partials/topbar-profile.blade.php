@@ -21,7 +21,7 @@
         </button>
 
         <!-- Notification Dropdown -->
-        <div id="notificationDropdown" class="hidden absolute right-0 top-full mt-2 w-80 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-50">
+        <div id="notificationDropdown" class="hidden absolute right-0 top-full mt-2 w-64 sm:w-80 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-50">
             <div class="px-4 py-3 border-b border-slate-100 bg-gradient-to-r from-blue-50 to-indigo-50">
                 <div class="flex items-center justify-between">
                     <p class="text-sm font-bold text-slate-800">Notifikasi Stok</p>
@@ -48,7 +48,7 @@
         </div>
     </button>
 
-    <div id="profileDropdown" class="hidden absolute right-0 top-full mt-2 w-56 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-50">
+        <div id="profileDropdown" class="hidden absolute right-0 top-full mt-2 w-56 max-w-[calc(100vw-1rem)] bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-50">
         <div class="px-4 py-3 border-b border-slate-100">
             <p class="text-sm font-bold text-slate-800 truncate">{{ $name }}</p>
             <p class="text-xs text-slate-400 truncate">{{ $user->email ?? '-' }}</p>

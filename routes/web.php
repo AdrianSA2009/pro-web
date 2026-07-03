@@ -1,9 +1,9 @@
 <?php
 use App\Http\Controllers\admin\BarangKeluarController;
-use App\Http\Controllers\Admin\BarangMasukController;
+use App\Http\Controllers\admin\BarangMasukController;
 use App\Http\Controllers\admin\kategoriController;
 use App\Http\Controllers\loginController;
-use App\Http\Controllers\admin\suppliercontroller;
+use App\Http\Controllers\admin\SupplierController;
 use App\Http\Controllers\admin\DashboardAdminController;
 use App\Http\Controllers\admin\BarangAdminController;
 use App\Http\Controllers\manajer\DashboardManajerController;

@@ -14,14 +14,14 @@
         .sidebar-nav::-webkit-scrollbar { width: 0px; background: transparent; }
     </style>
 </head>
-<body class="bg-slate-50 text-gray-800 h-screen flex overflow-hidden">
+<body class="bg-slate-50 text-gray-800 flex min-h-screen">
 
     @if(auth()->user()->role === 'manajer')
         @include('layout.sidebar-manajer')
     @else
         @include('layout.sidebar')
     @endif
-    <div class="flex-1 flex flex-col w-full md:ml-72 overflow-hidden transition-all duration-300">
+    <div class="flex-1 flex flex-col w-full md:ml-72 transition-all duration-300">
         <header class="bg-white/80 backdrop-blur-md sticky top-0 z-10 flex items-center justify-between px-8 py-4 border-b border-slate-100">
             <div class="flex items-center gap-4">
                 <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
@@ -32,7 +32,7 @@
             @include('layout.partials.topbar-profile')
         </header>
 
-        <main class="flex-1 overflow-y-auto p-6 md:p-8 space-y-6 bg-slate-50">
+        <main class="flex-1 p-6 md:p-8 space-y-8 bg-slate-50">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4" data-aos="fade-down">
                 <div>
                     <nav class="flex text-sm text-slate-500 mb-2">
@@ -146,6 +146,23 @@
     @include('layout.partials.aos-scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        
+        (function () {
+            const scrollContainer = document.querySelector('main');
+            if (scrollContainer) {
+                scrollContainer.addEventListener('scroll', function () {
+                    window.dispatchEvent(new Event('scroll'));
+                }, { passive: true });
+            }
+            // Also force a refresh shortly after load in case content is
+            // already fully visible without any scroll happening at all.
+            window.addEventListener('load', function () {
+                if (window.AOS) {
+                    setTimeout(() => AOS.refresh(), 200);
+                }
+            });
+        })();
+
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -277,6 +294,21 @@
                 });
             }
         });
+
+        const sidebar = document.getElementById('sidebar-multi-level-sidebar');
+        const customOverlay = document.getElementById('sidebar-overlay-custom');
+    
+        const observer = new MutationObserver(() => {
+            const isOpened = !sidebar.classList.contains('-translate-x-full');
+            
+            if (isOpened) {
+                customOverlay.classList.remove('hidden');
+            } else {
+                customOverlay.classList.add('hidden');
+            }
+        });
+    
+        observer.observe(sidebar, { attributes: true, attributeFilter: ['class'] });
     </script>
 </body>
 </html>

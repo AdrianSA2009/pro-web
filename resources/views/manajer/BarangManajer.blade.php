@@ -27,7 +27,7 @@
 
     @include('layout.sidebar-manajer')
 
-    <div class="flex-1 flex flex-col w-full md:ml-72 overflow-hidden transition-all duration-300">
+    <div class="flex-1 flex flex-col w-full md:ml-72 transition-all duration-300">
         <header class="bg-white/80 backdrop-blur-md sticky top-0 z-10 flex items-center justify-between px-8 py-4 border-b border-slate-100">
             <div class="flex items-center gap-4">
                 <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
@@ -38,7 +38,7 @@
             @include('layout.partials.topbar-profile')
         </header>
 
-        <main class="flex-1 overflow-y-auto p-6 md:p-8 space-y-6 bg-slate-50">
+        <main class="flex-1 min-h-0 overflow-y-auto p-6 md:p-8 space-y-6 bg-slate-50">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4" data-aos="fade-down">
                 <div>
                     <nav class="flex text-sm text-slate-500 mb-2">

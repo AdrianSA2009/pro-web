@@ -28,13 +28,13 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-gray-800 h-screen flex overflow-hidden">
+<body class="bg-slate-50 text-gray-800 flex min-h-screen">
 
     <!-- Sidebar -->
     @include('layout.sidebar-manajer')
     <!-- End Sidebar -->
 
-    <div class="flex-1 flex flex-col w-full md:ml-72 overflow-hidden transition-all duration-300">
+    <div class="flex-1 flex flex-col w-full md:ml-72 transition-all duration-300">
         <!-- Top Navbar -->
         <header class="bg-white/80 backdrop-blur-md sticky top-0 z-10 flex items-center justify-between px-8 py-4 border-b border-slate-100">
             <div class="flex items-center gap-4">
@@ -48,7 +48,7 @@
         <!-- End Top Navbar -->
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 bg-slate-50">
+        <main class="flex-1 p-6 md:p-8 space-y-8 bg-slate-50">
             <!-- Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
@@ -149,6 +149,21 @@
             once: true,
             easing: 'ease-in-out'
         });
+
+        const sidebar = document.getElementById('sidebar-multi-level-sidebar');
+        const customOverlay = document.getElementById('sidebar-overlay-custom');
+    
+        const observer = new MutationObserver(() => {
+            const isOpened = !sidebar.classList.contains('-translate-x-full');
+            
+            if (isOpened) {
+                customOverlay.classList.remove('hidden');
+            } else {
+                customOverlay.classList.add('hidden');
+            }
+        });
+    
+        observer.observe(sidebar, { attributes: true, attributeFilter: ['class'] });
     </script>
 </body>
 </html>
