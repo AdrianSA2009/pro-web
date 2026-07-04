@@ -30,7 +30,7 @@ Dikembangkan sebagai tugas *Project Based Learning* (PBL) Program Studi Teknik I
 | Peran | Nama |
 |-------|------|
 | **Manajer Proyek** | Dwi Amalia Purnamasari, S.T., M.Cs |
-| **Ketua Kelompok** | Adrian Septiaji (3312501064) |
+| **Ketua Tim** | Adrian Septiaji (3312501064) |
 | **Anggota** | Cindo Maulina (3312501070) |
 | **Anggota** | Taqiyyah Aufaa Nabiilah (3312501084) |
 
