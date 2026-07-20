@@ -144,7 +144,7 @@ class BarangAdminController extends Controller
                 
                 $sheet->setCellValue(
                     \PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex($col++) . $rowNum,
-                    (float) ($item->harga ?? 0)
+                    'Rp ' . number_format((float) ($item->harga ?? 0), 0, ',', '.')
                 );
                 if ($includeCategory) {
                     $sheet->setCellValue(\PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex($col++) . $rowNum, optional($item->kategori)->nama ?? '-');
@@ -165,10 +165,8 @@ class BarangAdminController extends Controller
             $sheet->getStyle('A2:A' . $highestRow)->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
             $sheet->getStyle('B2:B' . $highestRow)->getAlignment()->setHorizontal(Alignment::HORIZONTAL_LEFT);
             
-            // Format Harga menjadi Rupiah
             $sheet->getStyle('D2:D' . $highestRow)
-                  ->getNumberFormat()
-                  ->setFormatCode('"Rp "#.##0');
+                  ->getAlignment()->setHorizontal(Alignment::HORIZONTAL_LEFT);
         }
 
         // Tabel Border

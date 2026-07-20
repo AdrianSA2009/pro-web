@@ -9,7 +9,7 @@ use App\Http\Controllers\admin\BarangAdminController;
 use App\Http\Controllers\manajer\DashboardManajerController;
 use App\Http\Controllers\manajer\BarangManajerController;
 use App\Http\Controllers\admin\PenggunaController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\auth\ForgotPasswordController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Broadcast;
@@ -71,7 +71,5 @@ Route::middleware('auth')->group(function () {
         Route::get('/barang', [BarangManajerController::class, 'index'])->name('brgmanajer');
         Route::get('/barang/export', [BarangManajerController::class, 'export'])->name('brgmanajer.export');
     });
-
-    Broadcast::routes(['middleware' => ['auth']]);
 
 });

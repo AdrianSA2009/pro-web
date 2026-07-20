@@ -73,7 +73,7 @@
                         <i class="fas fa-check-circle"></i>
                     </button>
                 @else
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                    <button type="submit" id="btnOtp" onclick="this.disabled=true;this.classList.add('bg-slate-700','cursor-not-allowed');this.classList.remove('bg-blue-600','hover:bg-blue-500');this.querySelector('span').textContent='Mengirim...';this.querySelector('i').className='fas fa-spinner fa-spin';this.form.submit();" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
                         <span>Kirim Kode OTP</span>
                         <i class="fas fa-paper-plane"></i>
                     </button>

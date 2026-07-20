@@ -47,7 +47,7 @@
                 </div>
                 <button onclick="bukaTambah()" class="flex items-center gap-2 px-6 py-3 bg-blue-600 rounded-xl text-white font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
                     <i class="fas fa-plus"></i>
-                    <span>Tambah Barang</span>
+                    <span>Tambah Transaksi</span>
                 </button>
             </div>
 
@@ -219,18 +219,16 @@
                         </div>
 
                         <div class="border border-slate-100 rounded-[2rem] overflow-hidden shadow-sm bg-white">
-                            <table class="w-full text-left">
-                                <thead class="bg-slate-50/80 border-b border-slate-100">
-                                    <tr>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left w-16">No</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Serial Number</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Nama Barang</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Aksi</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                            <div class="overflow-y-auto" id="unitTambahScroll" style="max-height: 80px;">
-                                <table class="w-full text-left">
+                            <div class="overflow-y-auto" id="unitTambahScroll" style="max-height: 160px;">
+                                <table class="w-full">
+                                    <thead class="bg-slate-50 border-b border-slate-100 sticky top-0">
+                                        <tr>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center w-16">No</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Serial Number</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Nama Barang</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
                                     <tbody id="unitTambahBody" class="divide-y divide-slate-50">
                                         <tr id="emptyUnitRow">
                                             <td colspan="4" class="px-6 py-6 text-center text-xs text-slate-400">
@@ -367,17 +365,15 @@
                     <div class="space-y-2">
                         <label class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] px-1">Daftar Unit</label>
                         <div class="border border-slate-100 rounded-xl overflow-hidden shadow-sm bg-white">
-                            <table class="w-full text-left">
-                                <thead class="bg-slate-50/80 border-b border-slate-100">
-                                    <tr>
-                                        <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-left w-10">No</th>
-                                        <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-left">Serial Number</th>
-                                        <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-left">Nama Barang</th>
-                                    </tr>
-                                </thead>
-                            </table>
                             <div class="overflow-y-auto" style="max-height: 100px;">
-                                <table class="w-full text-left">
+                                <table class="w-full">
+                                    <thead class="bg-slate-50 border-b border-slate-100 sticky top-0">
+                                        <tr>
+                                            <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-center w-10">No</th>
+                                            <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-center">Serial Number</th>
+                                            <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-center">Nama Barang</th>
+                                        </tr>
+                                    </thead>
                                     <tbody id="detail-unit-body" class="divide-y divide-slate-50"></tbody>
                                 </table>
                             </div>
@@ -446,27 +442,26 @@
                         </div>
 
                         <div class="border border-slate-100 rounded-[2rem] overflow-hidden shadow-sm bg-white">
-                            <table class="w-full text-left">
-                                <thead class="bg-slate-50/80 border-b border-slate-100">
-                                    <tr>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left w-16">No</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Serial Number</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Nama Barang</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Aksi</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                            <div class="overflow-y-auto" style="max-height: 80px;">
-                                <table class="w-full text-left">
+                            <div class="overflow-y-auto" style="max-height: 160px;">
+                                <table class="w-full">
+                                    <thead class="bg-slate-50 border-b border-slate-100 sticky top-0">
+                                        <tr>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center w-16">No</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Serial Number</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Nama Barang</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
                                     <tbody id="unitEditBody" class="divide-y divide-slate-50">
                                         <tr id="emptyEditUnitRow">
-                                            <td colspan="4" class="px-6 py-6 text-left text-xs text-slate-400">
+                                            <td colspan="4" class="px-6 py-6 text-center text-xs text-slate-400">
                                                 Belum ada unit. Klik <span class="font-bold text-blue-500">Input</span> untuk menambahkan.
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            <p id="editUnitWarning" class="hidden text-center text-xs text-red-500 font-semibold py-3 border-t border-slate-100 bg-red-50/50"><i class="fas fa-exclamation-circle mr-1"></i>Daftar unit tidak boleh kosong.</p>
                         </div>
                     </div>
 
@@ -474,7 +469,7 @@
                         <button type="button" onclick="hideModal('modalEdit')" class="px-8 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition-all text-xs uppercase tracking-widest">
                             Batal
                         </button>
-                        <button type="submit" id="btnSubmitEdit" class="px-8 py-2.5 bg-amber-500 text-white rounded-xl font-bold hover:bg-amber-600 transition-all text-xs uppercase tracking-widest shadow-lg shadow-amber-100">
+                        <button type="submit" id="btnSubmitEdit" class="px-8 py-2.5 bg-amber-500 text-white rounded-xl font-bold hover:bg-amber-600 transition-all text-xs uppercase tracking-widest shadow-lg shadow-amber-100 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-amber-500">
                             Simpan Perubahan
                         </button>
                     </div>
@@ -592,17 +587,17 @@
             const tbody = document.getElementById('detail-unit-body');
             tbody.innerHTML = '';
             if (!data.units || data.units.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="3" class="px-5 py-5 text-left text-xs text-slate-400">Tidak ada unit.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="3" class="px-5 py-5 text-center text-xs text-slate-400">Tidak ada unit.</td></tr>';
             } else {
                 data.units.forEach(function(unit, i) {
                     const tr = document.createElement('tr');
                     tr.className = 'hover:bg-slate-50/50 transition-colors';
                     tr.innerHTML =
-                        '<td class="px-5 py-3.5 text-left text-xs font-bold text-slate-800">' + (i + 1) + '</td>' +
-                        '<td class="px-5 py-3.5">' +
+                        '<td class="px-5 py-3.5 text-center text-xs font-bold text-slate-800">' + (i + 1) + '</td>' +
+                        '<td class="px-5 py-3.5 text-center">' +
                             '<span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span>' +
                         '</td>' +
-                        '<td class="px-5 py-3.5 text-sm text-slate-700">' + (unit.nama || data.barang || '-') + '</td>';
+                        '<td class="px-5 py-3.5 text-center text-sm text-slate-700">' + (unit.nama || data.barang || '-') + '</td>';
                     tbody.appendChild(tr);
                 });
             }
@@ -642,8 +637,11 @@
                 submitBtn.disabled = addUnitList.length === 0;
             }
             const submitEditBtn = document.getElementById('btnSubmitEdit');
+            const editWarning = document.getElementById('editUnitWarning');
             if (submitEditBtn) {
-                submitEditBtn.disabled = editUnitList.length === 0;
+                const isEmpty = editUnitList.length === 0;
+                submitEditBtn.disabled = isEmpty;
+                if (editWarning) editWarning.classList.toggle('hidden', !isEmpty);
             }
         }
 
@@ -670,21 +668,25 @@
                 tr.className = 'hover:bg-slate-50/50 transition-colors';
                 if (mode === 'edit') {
                     tr.innerHTML =
-                        '<td class="px-6 py-4 text-left text-xs font-bold text-slate-800">' + (index + 1) + '</td>' +
-                        '<td class="px-6 py-4 text-left"><span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
-                        '<td class="px-6 py-4 text-left text-xs font-medium text-slate-700">' + unit.nama + '</td>' +
-                        '<td class="px-6 py-4 text-left text-xs font-medium text-slate-700 flex items-center gap-2">' +
+                        '<td class="px-6 py-4 text-center text-xs font-bold text-slate-800">' + (index + 1) + '</td>' +
+                        '<td class="px-6 py-4 text-center"><span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
+                        '<td class="px-6 py-4 text-center text-xs font-medium text-slate-700">' + unit.nama + '</td>' +
+                        '<td class="px-6 py-4 text-center text-xs font-medium text-slate-700">' +
+                            '<div class="flex items-center justify-center gap-2">' +
                             '<button type="button" onclick="editUnitRow(' + index + ')" class="px-3 py-1 bg-amber-50 text-amber-700 rounded-lg border border-amber-100 hover:bg-amber-100 transition">Edit</button>' +
                             '<button type="button" onclick="deleteEditUnit(' + index + ')" class="px-3 py-1 bg-red-50 text-red-700 rounded-lg border border-red-100 hover:bg-red-100 transition">Hapus</button>' +
+                            '</div>' +
                         '</td>';
                 } else {
                     tr.innerHTML =
-                        '<td class="px-6 py-4 text-left text-xs font-bold text-slate-800">' + (index + 1) + '</td>' +
-                        '<td class="px-6 py-4 text-left"><span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
-                        '<td class="px-6 py-4 text-left text-xs font-medium text-slate-700">' + unit.nama + '</td>' +
-                        '<td class="px-6 py-4 text-left text-xs font-medium text-slate-700 flex items-center gap-2">' +
+                        '<td class="px-6 py-4 text-center text-xs font-bold text-slate-800">' + (index + 1) + '</td>' +
+                        '<td class="px-6 py-4 text-center"><span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
+                        '<td class="px-6 py-4 text-center text-xs font-medium text-slate-700">' + unit.nama + '</td>' +
+                        '<td class="px-6 py-4 text-center text-xs font-medium text-slate-700">' +
+                            '<div class="flex items-center justify-center gap-2">' +
                             '<button type="button" onclick="editUnitRow(' + index + ')" class="px-3 py-1 bg-amber-50 text-amber-700 rounded-lg border border-amber-100 hover:bg-amber-100 transition">Edit</button>' +
                             '<button type="button" onclick="deleteTambahUnit(' + index + ')" class="px-3 py-1 bg-red-50 text-red-700 rounded-lg border border-red-100 hover:bg-red-100 transition">Hapus</button>' +
+                            '</div>' +
                         '</td>';
                 }
                 tbody.appendChild(tr);
@@ -827,6 +829,7 @@
             editUnitList.splice(index, 1);
             renderUnitTable('edit');
             rebuildHiddenFields('edit');
+            updateSubmitButtonState();
         }
 
         function bukaEdit(data) {
@@ -847,9 +850,18 @@
             editUnitList = data.units || [];
             renderUnitTable('edit');
             rebuildHiddenFields('edit');
+            updateSubmitButtonState();
 
             showModal('modalEdit');
         }
+
+        // Guard: prevent form submit when unit list is empty (e.g. Enter key)
+        document.getElementById('formEdit').addEventListener('submit', function(e) {
+            if (editUnitList.length === 0) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
 
         function bukaDelete(id) {
             const form = document.getElementById('formDelete');

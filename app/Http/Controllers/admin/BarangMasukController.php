@@ -189,7 +189,6 @@ class BarangMasukController extends Controller
         $barangMasuk = BarangMasuk::with('unitBarang', 'barang')->findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'kategori_id' => 'required|exists:kategori,id',
             'nama_barang' => 'required|string|max:255',
             'supplier_id' => 'required|exists:suppliers,id',
             'tgl_masuk' => 'required|date',
@@ -268,7 +267,7 @@ class BarangMasukController extends Controller
             $barang = Barang::firstOrCreate(
                 [
                     'nama' => trim($request->nama_barang),
-                    'kategori_id' => $request->kategori_id,
+                    'kategori_id' => $barangMasuk->barang->kategori_id,
                 ],
                 [
                     'harga' => 0,
@@ -276,12 +275,6 @@ class BarangMasukController extends Controller
                     'stok' => 0,
                 ]
             );
-
-            // Update existing barang's category if it changed
-            if ($barang->kategori_id != $request->kategori_id) {
-                $barang->kategori_id = $request->kategori_id;
-                $barang->save();
-            }
 
             $oldBarang = $barangMasuk->barang;
             $oldJumlah = $barangMasuk->jumlah;

@@ -124,23 +124,31 @@
                 notificationBadge.classList.remove('hidden');
                 notificationBadge.textContent = notifications.length > 9 ? '9+' : notifications.length;
                 
-                notificationList.innerHTML = notifications.map((notif, index) => `
-                    <div class="px-4 py-3 border-b border-slate-50 hover:bg-slate-50 transition-colors cursor-pointer" onclick="event.preventDefault(); fetch('/api/low-stock-items/'+${notif.barang_id}, {method:'DELETE'}); window.location.href='/admin/barang'">
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-exclamation-triangle text-sm"></i>
+                notificationList.innerHTML = notifications.map((notif, index) => {
+                    const isManajer = window.location.pathname.startsWith('/manajer');
+                    const baseUrl = isManajer ? '/manajer/barang' : '/admin/barang';
+
+                    const targetUrl = `${baseUrl}?search=${encodeURIComponent(notif.barang_nama)}`;
+                    
+                    return `
+                            <div class="px-4 py-3 border-b border-slate-50 hover:bg-slate-50 transition-colors cursor-pointer" 
+                                 onclick="event.preventDefault(); fetch('/api/low-stock-items/'+${notif.barang_id}, {method:'DELETE'}).then(() => window.location.href='${targetUrl}')">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-exclamation-triangle text-sm"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-slate-800 truncate">${notif.barang_nama}</p>
+                                        <p class="text-xs text-slate-500 mt-0.5">Stok tersisa: ${notif.stok} unit</p>
+                                        <p class="text-[10px] text-slate-400 mt-1">${formatTime(notif.timestamp)}</p>
+                                    </div>
+                                    <button onclick="event.stopPropagation(); removeNotification(${index})" class="text-slate-400 hover:text-red-500 transition-colors">
+                                        <i class="fas fa-times text-xs"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium text-slate-800 truncate">${notif.barang_nama}</p>
-                                <p class="text-xs text-slate-500 mt-0.5">Stok tersisa: ${notif.stok} unit</p>
-                                <p class="text-[10px] text-slate-400 mt-1">${formatTime(notif.timestamp)}</p>
-                            </div>
-                            <button onclick="event.stopPropagation(); removeNotification(${index})" class="text-slate-400 hover:text-red-500 transition-colors">
-                                <i class="fas fa-times text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
+                        `;
+                    }).join('');
             }
             localStorage.setItem('lowStockNotifications', JSON.stringify(notifications));
         }
@@ -247,7 +255,7 @@
             fetch('/api/low-stock-items')
                 .then(response => response.json())
                 .then(data => {
-                    // Hapus notifikasi localStorage yang sudah tidak ada di DB (stok sudah normal)
+                    // Hapus notifikasi localStorage yang sudah tidak ada di DB
                     const apiBarangIds = new Set(data.map(n => n.barang_id));
                     const beforeCount = notifications.length;
                     notifications = notifications.filter(n => apiBarangIds.has(n.barang_id));

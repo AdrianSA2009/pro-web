@@ -343,10 +343,10 @@
                     
                         <div class="bg-slate-50 p-6 flex justify-end gap-3">
                             <button type="button" data-modal-hide="modalEdit" onclick="hideModal('modalEdit')" class="px-6 py-3 text-slate-400 font-bold hover:text-slate-600 transition-all">
-                                Discard
+                                Batal
                             </button>
                             <button type="submit" id="submitEditBtn" class="px-10 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-amber-500 transition-all shadow-xl shadow-slate-200">
-                                Save Changes
+                                Simpan Perubahan
                             </button>
                         </div>
                     </form>

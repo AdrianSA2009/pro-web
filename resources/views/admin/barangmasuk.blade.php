@@ -47,7 +47,7 @@
                 </div>
                 <button data-modal-target="modalTambahTransaksi" data-modal-toggle="modalTambahTransaksi" class="flex items-center gap-2 px-6 py-3 bg-blue-600 rounded-xl text-white font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
                     <i class="fas fa-plus"></i>
-                    <span>Tambah Barang</span>
+                    <span>Tambah Transaksi</span>
                 </button>
             </div>
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="100">
@@ -257,17 +257,15 @@
                         </div>
 
                         <div class="border border-slate-100 rounded-[2rem] overflow-hidden shadow-sm bg-white">
-                            <table class="w-full text-left">
-                                <thead class="bg-slate-50/80 border-b border-slate-100">
-                                    <tr>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left w-16">No</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Serial Number</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Nama Barang</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                            <div class="overflow-y-auto" id="unitTambahScroll" style="max-height: 80px;">
-                                <table class="w-full text-left">
+                            <div class="overflow-y-auto" id="unitTambahScroll" style="max-height: 160px;">
+                                <table class="w-full">
+                                    <thead class="bg-slate-50 border-b border-slate-100 sticky top-0">
+                                        <tr>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center w-16">No</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Serial Number</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Nama Barang</th>
+                                        </tr>
+                                    </thead>
                                     <tbody id="unitTambahBody" class="divide-y divide-slate-50">
                                         <tr id="emptyUnitRow">
                                             <td colspan="3" class="px-6 py-6 text-center text-xs text-slate-400">
@@ -415,17 +413,15 @@
                     <div class="space-y-2">
                         <label class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] px-1">Daftar Unit</label>
                         <div class="border border-slate-100 rounded-xl overflow-hidden shadow-sm bg-white">
-                            <table class="w-full text-left">
-                                <thead class="bg-slate-50/80 border-b border-slate-100">
-                                    <tr>
-                                        <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-left w-10">No</th>
-                                        <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-left">Serial Number</th>
-                                        <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-left">Nama Barang</th>
-                                    </tr>
-                                </thead>
-                            </table>
                             <div class="overflow-y-auto" style="max-height: 100px;">
-                                <table class="w-full text-left">
+                                <table class="w-full">
+                                    <thead class="bg-slate-50 border-b border-slate-100 sticky top-0">
+                                        <tr>
+                                            <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-center w-10">No</th>
+                                            <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-center">Serial Number</th>
+                                            <th class="px-4 py-2.5 text-[8px] font-black text-slate-400 uppercase tracking-widest text-center">Nama Barang</th>
+                                        </tr>
+                                    </thead>
                                     <tbody id="detail-unit-body" class="divide-y divide-slate-50"></tbody>
                                 </table>
                             </div>
@@ -476,27 +472,15 @@
                                 class="tgl-input w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 outline-none text-sm font-semibold transition-all text-slate-700" placeholder="DD/MM/YYYY" required>
                         </div>
     
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block mb-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Kategori Barang</label>
-                                <select name="kategori_id" id="edit-kategori"
-                                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 outline-none text-sm font-semibold transition-all text-slate-700" required>
-                                    <option value="" disabled>Pilih kategori barang</option>
-                                    @foreach($kategori as $kat)
-                                        <option value="{{ $kat->id }}">{{ $kat->nama }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block mb-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Supplier</label>
-                                <select name="supplier_id" id="edit-supplier"
-                                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 outline-none text-sm font-semibold transition-all text-slate-700" required>
-                                    <option value="" disabled>Pilih supplier</option>
-                                    @foreach($suppliers as $sup)
-                                        <option value="{{ $sup->id }}">{{ $sup->nama }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                        <div>
+                            <label class="block mb-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Supplier</label>
+                            <select name="supplier_id" id="edit-supplier"
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 outline-none text-sm font-semibold transition-all text-slate-700" required>
+                                <option value="" disabled>Pilih supplier</option>
+                                @foreach($suppliers as $sup)
+                                    <option value="{{ $sup->id }}">{{ $sup->nama }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
     
@@ -512,26 +496,26 @@
                         </div>
     
                         <div class="border border-slate-100 rounded-[2rem] overflow-hidden shadow-sm bg-white">
-                            <table class="w-full text-left">
-                                <thead class="bg-slate-50/80 border-b border-slate-100">
-                                    <tr>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left w-16">No</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Serial Number</th>
-                                        <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-left">Aksi</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                            <div class="overflow-y-auto" style="max-height: 80px;">
-                                <table class="w-full text-left">
+                            <div class="overflow-y-auto" style="max-height: 160px;">
+                                <table class="w-full">
+                                    <thead class="bg-slate-50 border-b border-slate-100 sticky top-0">
+                                        <tr>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center w-16">No</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Serial Number</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Nama Barang</th>
+                                            <th class="px-6 py-4 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
                                     <tbody id="unitEditBody" class="divide-y divide-slate-50">
                                         <tr id="emptyEditUnitRow">
-                                            <td colspan="3" class="px-6 py-6 text-left text-xs text-slate-400">
+                                            <td colspan="4" class="px-6 py-6 text-center text-xs text-slate-400">
                                                 Belum ada unit. Klik <span class="font-bold text-blue-500">Input</span> untuk menambahkan.
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            <p id="editUnitWarning" class="hidden text-center text-xs text-red-500 font-semibold py-3 border-t border-slate-100 bg-red-50/50"><i class="fas fa-exclamation-circle mr-1"></i>Daftar unit tidak boleh kosong.</p>
                         </div>
                     </div>
     
@@ -539,7 +523,7 @@
                         <button type="button" onclick="hideModal('modalEdit')" class="px-8 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition-all text-xs uppercase tracking-widest">
                             Batal
                         </button>
-                        <button type="submit" class="px-8 py-2.5 bg-amber-500 text-white rounded-xl font-bold hover:bg-amber-600 transition-all text-xs uppercase tracking-widest shadow-lg shadow-amber-100">
+                        <button type="submit" id="btnSubmitEdit" class="px-8 py-2.5 bg-amber-500 text-white rounded-xl font-bold hover:bg-amber-600 transition-all text-xs uppercase tracking-widest shadow-lg shadow-amber-100 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-amber-500">
                             Simpan Perubahan
                         </button>
                     </div>
@@ -649,17 +633,17 @@
             const tbody = document.getElementById('detail-unit-body');
             tbody.innerHTML = '';
             if (!data.units || data.units.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="2" class="px-5 py-5 text-left text-xs text-slate-400">Tidak ada unit.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="3" class="px-5 py-5 text-center text-xs text-slate-400">Tidak ada unit.</td></tr>';
             } else {
                 data.units.forEach(function(unit, i) {
                     const tr = document.createElement('tr');
                     tr.className = 'hover:bg-slate-50/50 transition-colors';
                     tr.innerHTML =
-                        '<td class="px-5 py-3.5 text-left text-xs font-bold text-slate-800">' + (i + 1) + '</td>' +
-                        '<td class="px-5 py-3.5">' +
+                        '<td class="px-5 py-3.5 text-center text-xs font-bold text-slate-800">' + (i + 1) + '</td>' +
+                        '<td class="px-5 py-3.5 text-center">' +
                             '<span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span>' +
                         '</td>' +
-                        '<td class="px-5 py-3.5 text-sm text-slate-700">' + (unit.nama || data.barang || '-') + '</td>';
+                        '<td class="px-5 py-3.5 text-center text-sm text-slate-700">' + (unit.nama || data.barang || '-') + '</td>';
                     tbody.appendChild(tr);
                 });
             }
@@ -676,11 +660,9 @@
             } else {
                 editTglEl.value = data.tgl || '';
             }
-            const editKatEl = document.getElementById('edit-kategori');
-            editKatEl.value = data.kategori_id || '';
-            editKatEl.dataset.prevValue = editKatEl.value;
             document.getElementById('edit-supplier').value = data.supplier_id || '';
             currentEditNamaBarang = data.nama || '';
+            currentEditKategoriId = data.kategori_id || '';
 
             editUnitList = Array.isArray(data.units) ? data.units.map(function(unit) {
                 return {
@@ -692,12 +674,21 @@
 
             renderUnitTable('edit');
             rebuildHiddenFields('edit');
+            updateSubmitButtonState();
 
             const form = document.getElementById('formEdit');
             form.action = '/admin/barangmasuk/' + data.id;
 
             showModal('modalEdit');
         }
+
+        // Guard: prevent form submit when unit list is empty
+        document.getElementById('formEdit').addEventListener('submit', function(e) {
+            if (editUnitList.length === 0) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
 
         // ── MODAL DELETE ───────────────────────────────────────────────────
         function bukaDelete(id, kode) {
@@ -715,6 +706,7 @@
         let activeUnitMode = 'add';
         let activeUnitIndex = null;
         let currentEditNamaBarang = '';
+        let currentEditKategoriId = '';
         let isSavingUnit = false;
 
         function normalizeSerial(value) {
@@ -727,8 +719,14 @@
 
         function updateSubmitButtonState() {
             const submitBtn = document.getElementById('btnSubmitTambah');
-            if (!submitBtn) return;
-            submitBtn.disabled = addUnitList.length === 0;
+            if (submitBtn) submitBtn.disabled = addUnitList.length === 0;
+            const submitEditBtn = document.getElementById('btnSubmitEdit');
+            const editWarning = document.getElementById('editUnitWarning');
+            if (submitEditBtn) {
+                const isEmpty = editUnitList.length === 0;
+                submitEditBtn.disabled = isEmpty;
+                if (editWarning) editWarning.classList.toggle('hidden', !isEmpty);
+            }
         }
 
         function getUnitList(mode) {
@@ -739,12 +737,13 @@
             const tbody = document.getElementById(mode === 'edit' ? 'unitEditBody' : 'unitTambahBody');
             const units = getUnitList(mode);
             const emptyRowId = mode === 'edit' ? 'emptyEditUnitRow' : 'emptyUnitRow';
+            const colSpan = mode === 'edit' ? '4' : '3';
 
             tbody.innerHTML = '';
             if (units.length === 0) {
                 const emptyRow = document.createElement('tr');
                 emptyRow.id = emptyRowId;
-                emptyRow.innerHTML = '<td colspan="' + (mode === 'edit' ? '3' : '3') + '" class="px-6 py-6 text-left text-xs text-slate-400">' +
+                emptyRow.innerHTML = '<td colspan="' + colSpan + '" class="px-6 py-6 text-center text-xs text-slate-400">' +
                     (mode === 'edit' ? 'Belum ada unit. Klik <span class="font-bold text-blue-500">Input</span> untuk menambahkan.' : 'Belum ada unit. Tambahkan unit terlebih dahulu.') +
                     '</td>';
                 tbody.appendChild(emptyRow);
@@ -755,28 +754,33 @@
                 const tr = document.createElement('tr');
                 tr.className = 'hover:bg-slate-50/50 transition-colors';
                 if (mode === 'edit') {
+                    const namaBarang = currentEditNamaBarang || '-';
                     if (unit.locked) {
-                        tr.className = 'bg-slate-50/80 transition-colors';
+                        tr.className = 'bg-slate-50 transition-colors';
                         tr.innerHTML =
-                            '<td class="px-6 py-4 text-left text-xs font-bold text-slate-400">' + (index + 1) + '</td>' +
-                            '<td class="px-6 py-4 text-left"><span class="text-xs font-mono font-bold text-slate-400 px-2 py-1 bg-slate-100 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
-                            '<td class="px-6 py-4 text-left text-xs font-medium text-slate-400 flex items-center gap-2">' +
+                            '<td class="px-6 py-4 text-center text-xs font-bold text-slate-400">' + (index + 1) + '</td>' +
+                            '<td class="px-6 py-4 text-center"><span class="text-xs font-mono font-bold text-slate-400 px-2 py-1 bg-slate-100 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
+                            '<td class="px-6 py-4 text-center text-xs font-medium text-slate-400">' + namaBarang + '</td>' +
+                            '<td class="px-6 py-4 text-center text-xs font-medium text-slate-400">' +
                                 '<span class="inline-flex items-center gap-1 px-3 py-1 bg-slate-100 text-slate-400 rounded-lg border border-slate-200 text-[10px] font-bold uppercase tracking-wider"><i class="fas fa-lock text-[9px]"></i> Locked</span>' +
                             '</td>';
                     } else {
                         tr.innerHTML =
-                            '<td class="px-6 py-4 text-left text-xs font-bold text-slate-800">' + (index + 1) + '</td>' +
-                            '<td class="px-6 py-4 text-left"><span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
-                            '<td class="px-6 py-4 text-left text-xs font-medium text-slate-700 flex items-center gap-2">' +
+                            '<td class="px-6 py-4 text-center text-xs font-bold text-slate-800">' + (index + 1) + '</td>' +
+                            '<td class="px-6 py-4 text-center"><span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
+                            '<td class="px-6 py-4 text-center text-xs font-medium text-slate-700">' + namaBarang + '</td>' +
+                            '<td class="px-6 py-4 text-center text-xs font-medium text-slate-700">' +
+                                '<div class="flex items-center justify-center gap-2">' +
                                 '<button type="button" onclick="editUnitRow(' + index + ')" class="px-3 py-1 bg-amber-50 text-amber-700 rounded-lg border border-amber-100 hover:bg-amber-100 transition">Edit</button>' +
                                 '<button type="button" onclick="deleteEditUnit(' + index + ')" class="px-3 py-1 bg-red-50 text-red-700 rounded-lg border border-red-100 hover:bg-red-100 transition">Hapus</button>' +
+                                '</div>' +
                             '</td>';
                     }
                 } else {
                     tr.innerHTML =
-                        '<td class="px-6 py-4 text-left text-xs font-bold text-slate-800">' + (index + 1) + '</td>' +
-                        '<td class="px-6 py-4 text-left"><span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
-                        '<td class="px-6 py-4 text-left text-xs font-medium text-slate-700">' + unit.nama + '</td>';
+                        '<td class="px-6 py-4 text-center text-xs font-bold text-slate-800">' + (index + 1) + '</td>' +
+                        '<td class="px-6 py-4 text-center"><span class="text-xs font-mono font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded-lg uppercase tracking-tight">' + unit.sn + '</span></td>' +
+                        '<td class="px-6 py-4 text-center text-xs font-medium text-slate-700">' + unit.nama + '</td>';
                 }
                 tbody.appendChild(tr);
             });
@@ -901,7 +905,7 @@
 
         function getSelectedKategoriId() {
             if (activeUnitMode === 'edit') {
-                return document.getElementById('edit-kategori').value;
+                return currentEditKategoriId;
             }
             return document.getElementById('add-kategori').value;
         }
@@ -940,6 +944,7 @@
             editUnitList.splice(index, 1);
             renderUnitTable('edit');
             rebuildHiddenFields('edit');
+            updateSubmitButtonState();
         }
 
         async function simpanDataUnit() {
@@ -1232,16 +1237,11 @@
         }
 
         const addKategoriEl = document.getElementById('add-kategori');
-        const editKategoriEl = document.getElementById('edit-kategori');
 
         addKategoriEl.addEventListener('focus', function() { this.dataset.prevValue = this.value; });
-        editKategoriEl.addEventListener('focus', function() { this.dataset.prevValue = this.value; });
 
         addKategoriEl.addEventListener('change', function() {
             guardKategoriChange(this, function() { return addUnitList; });
-        });
-        editKategoriEl.addEventListener('change', function() {
-            guardKategoriChange(this, function() { return editUnitList; });
         });
 
         @if(session('toast_success'))

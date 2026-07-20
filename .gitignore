@@ -16,7 +16,7 @@
 /ngrok.yml
 /public/build
 /public/hot
-/public/storage
+/public/storage/*.key
 /storage/*.key
 /storage/pail
 /vendor

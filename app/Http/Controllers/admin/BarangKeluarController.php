@@ -166,7 +166,7 @@ class BarangKeluarController extends Controller
         }
 
         $invalidUnits = $unitsCheck->filter(function($unit) use ($barangKeluar) {
-            return $unit->barang_keluar_id !== null && $unit->barang_keluar_id !== $barangKeluar->id;
+            return $unit->barang_keluar_id != null && $unit->barang_keluar_id != $barangKeluar->id;
         });
 
         if ($invalidUnits->isNotEmpty()) {
